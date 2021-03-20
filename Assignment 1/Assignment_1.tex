@@ -162,24 +162,18 @@ We are drawing two card from the deck, with replacement. Let \(X \in \{0,1,2\}\)
 Now, let us find the probability distribution:
 \begin{enumerate}
     \item Drawing no aces:
-    The probability is obtained by multiplying the probabilities of not drawing an ace both times
-    
     \begin{align}
         Pr(X=0) &= q \times q\\
         &= \frac{12}{13}\times\frac{12}{13} = \frac{144}{169}\\
         &= 0.851344\\\nonumber
     \end{align}
     \item Drawing one ace:
-    The probability is obtained by adding the probabilities of drawing an ace in the first draw and drawing an ace in the second draw.The probability for each case is given by multiplying the probabilities of drawing an ace and not drawing an ace
-    
     \begin{align}
         Pr(X=0) &= p \times q + q \times p\\
         &= \frac{1}{13}\times\frac{12}{13} + \frac{12}{13}\times\frac{1}{13}\nonumber\\
         &= \frac{24}{169} = 0.142824\\\nonumber
     \end{align}
     \item Drawing both aces:
-    The probability is obtained by multiplying the probabilities of drawing an ace both times
-    
     \begin{align}
         Pr(X=0) &= p \times p\\
         &= \frac{1}{13}\times\frac{1}{13} = \frac{1}{169}\\
@@ -206,14 +200,14 @@ Now, let us find the probability distribution:
 
 \begin{figure}[H]
     \centering
-    \frame{\includegraphics[width=0.95\linewidth]{Pie_chart.png}}
+    \frame{\includegraphics[width=\linewidth]{Pie_chart.png}}
     \caption{Representation of Theory}
     \label{Pie chart}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \frame{\includegraphics[width=0.95\linewidth]{Bar_graph.png}}
+    \frame{\includegraphics[width=\linewidth]{Bar_graph.png}}
     \caption{Theory vs Simulation}
     \label{Bar Chart}
 \end{figure}
