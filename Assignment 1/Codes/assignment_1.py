@@ -44,21 +44,21 @@ for i in range(4):
     deck[index] = 'A'
     i+=1
 
-count_no_ace = 0
-count_one_ace = 0
-count_two_aces = 0
+count_no_ace = 0 #counts the number of cases when no aces are picked
+count_one_ace = 0 #counts the number of cases when only one ace is picked
+count_two_aces = 0 #counts the number of cases when both the picked cards are aces
 
 for i in range(test_cases+1):
   pick1 = rd.randint(0,51)
   pick2 = rd.randint(0,51)
 
-  if deck[pick1]!='A' and deck[pick2]!='A':
+  if deck[pick1]!='A' and deck[pick2]!='A': #no aces case
     count_no_ace+=1
-  elif deck[pick1]=='A' and deck[pick2]!='A':
+  elif deck[pick1]=='A' and deck[pick2]!='A':#one ace type 1
     count_one_ace+=1
-  elif deck[pick1]!='A' and deck[pick2]=='A':
+  elif deck[pick1]!='A' and deck[pick2]=='A':#one ace type 2
     count_one_ace+=1
-  elif deck[pick1]=='A' and deck[pick2]=='A':
+  elif deck[pick1]=='A' and deck[pick2]=='A':#both aces case
     count_two_aces+=1
 
 #P(X=0) will be:
