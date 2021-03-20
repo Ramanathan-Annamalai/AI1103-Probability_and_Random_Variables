@@ -28,6 +28,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{graphicx}
 \usepackage{tkz-euclide}
+\usepackage{float}
 
 \usetikzlibrary{calc,math}
 \usepackage{listings}
@@ -112,9 +113,11 @@ columns=fullflexible
      \def\centbox#1{\makebox[0in]{#1}}
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
 \vspace{3cm}
+
 \title{AI1103-Assignment 1}
-\author{Name: Ramanathan Annamalai, Roll Number: BM20BTECH11011}
+\author{Name: Ramanathan Annamalai\\\normalsize{Roll Number: BM20BTECH11011\\\includegraphics[scale=0.34]{IITHLogo.png}}}
 \maketitle
 \newpage
 \bigskip
@@ -128,35 +131,91 @@ https://github.com/Ramanathan-Annamalai/AI1103-Probability_and_Random_Variables/
 and latex-tikz codes from 
 %
 \begin{lstlisting}
-#link
+https://github.com/Ramanathan-Annamalai/AI1103-Probability_and_Random_Variables/blob/main/Assignment%201/Assignment_1.tex
 \end{lstlisting}
 \section*{Question}
 Two cards are drawn successively with replacement from a well shuffled deck of 52 cards. Find the probability distribution of the number of aces.
 
 \section*{Solution}
-Total number of marbles = 5 + 8 + 4 = 17 marbles.
-\\Let $X \in \{0,1,2\}$ represent the random variable, where 0 represents a red marble, 1 represents a white marble, and 2 represents a green marble. From the given information, 
+A deck of 52 cards contains 4 Aces i.e 1 from each suit.
+
+
+Let probability of picking an ace from a well shuffled deck be \(p\)
+\begin{align}
+    p &= \frac{\text{No. of favourable cases}}{\text{Total no. of cases}}\nonumber\\
+    &=\frac{4}{52} = \frac{1}{13}\\\nonumber
+\end{align}
+
+Probability of not picking an ace from the deck will be represented by \(q\)
+\begin{align}
+    q&=(1-p)\nonumber\\
+    &=\frac{48}{52} = \frac{12}{13}\\\nonumber
+\end{align}
+
+We are drawing two card from the deck, with replacement. Let \(X \in \{0,1,2\}\) represent the random variable, where
 \begin{enumerate}
-    
-
-\item Probability that the marble taken out will be red = Pr(X=0)
-\begin{align}
-    Pr(X=0) = \frac{\mbox{number of red marbles}}{\mbox{total number of marbles}}\\
-    Pr(X=0) = \frac{5}{17} = 0.294117647
-\end{align}
-\item Probability that the marble taken out will be white = Pr(X=1)
-\begin{align}
-    Pr(X=1) = \frac{\mbox{number of white marbles}}{\mbox{total number of marbles}}\\
-    Pr(X=1) = \frac{8}{17} = 0.4705882353
-\end{align}
-\item Probability that the marble taken out will not be green = Pr(X$\neq$2)
-\\Pr(X$\neq$2) + Pr(X=2) = 1 (since complementary events are mutually exclusive)
-\\$\implies$ Pr(X$\neq$2) = 1 - Pr(X=2)
-\begin{align}
-    Pr(X=2) = \frac{\mbox{number of green marbles}}{\mbox{total number of marbles}}\\
-    Pr(X=2) = \frac{4}{17} \\
-    \implies Pr(\mbox{X$\neq$2}) = 1 -\frac{4}{17} = \frac{13}{17} = 0.764705883
-\end{align}
-
+    \item 0 represents drawing no aces
+    \item 1 represents drawing one ace
+    \item 2 represents drawing two aces
 \end{enumerate}
+\section*{}
+Now, let us find the probability distribution:
+\begin{enumerate}
+    \item Drawing no aces:
+    The probability is obtained by multiplying the probabilities of not drawing an ace both times
+    
+    \begin{align}
+        Pr(X=0) &= q \times q\\
+        &= \frac{12}{13}\times\frac{12}{13} = \frac{144}{169}\\
+        &= 0.851344\\\nonumber
+    \end{align}
+    \item Drawing one ace:
+    The probability is obtained by adding the probabilities of drawing an ace in the first draw and drawing an ace in the second draw.The probability for each case is given by multiplying the probabilities of drawing an ace and not drawing an ace
+    
+    \begin{align}
+        Pr(X=0) &= p \times q + q \times p\\
+        &= \frac{1}{13}\times\frac{12}{13} + \frac{12}{13}\times\frac{1}{13}\nonumber\\
+        &= \frac{24}{169} = 0.142824\\\nonumber
+    \end{align}
+    \item Drawing both aces:
+    The probability is obtained by multiplying the probabilities of drawing an ace both times
+    
+    \begin{align}
+        Pr(X=0) &= p \times p\\
+        &= \frac{1}{13}\times\frac{1}{13} = \frac{1}{169}\\
+        &= 0.005833\\\nonumber
+    \end{align}
+\end{enumerate}
+
+\begin{table}[H]
+    \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \multirow{2}{*}{\normalsize{Random Variable [X]}} &   \multirow{2}{*}{\normalsize{Probability [Pr(X)}}    \\
+                                        &                                                \\\hline
+            \multirow{2}{*}{\large{0}}  &   \multirow{2}{*}{\large{\(\frac{144}{169}\)}} \\
+                                        &                                                \\\hline
+            \multirow{2}{*}{\large{1}}  &   \multirow{2}{*}{\large{\(\frac{24}{169}\)}}  \\
+                                        &                                                \\\hline
+            \multirow{2}{*}{\large{2}}  &   \multirow{2}{*}{\large{\(\frac{1}{169}\)}}   \\
+                                        &                                                \\\hline
+    \end{tabular}
+    \caption{Probability distribution values for the outcomes of the event.}
+    \label{Probabilty Distribution Table}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=0.95\linewidth]{Pie_chart.png}}
+    \caption{Representation of Theory}
+    \label{Pie chart}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=0.95\linewidth]{Bar_graph.png}}
+    \caption{Theory vs Simulation}
+    \label{Bar Chart}
+\end{figure}
+
 \end{document}
