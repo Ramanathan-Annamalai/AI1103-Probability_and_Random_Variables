@@ -163,35 +163,32 @@ Now, let us find the probability distribution:
 \begin{enumerate}
     \item Drawing no aces:
     \begin{align}
-        Pr(X=0) &= q \times q\\
-        &= \frac{12}{13}\times\frac{12}{13} = \frac{144}{169}\\
-        &= 0.851344\\\nonumber
+        Pr(X=0) = q \times q &= q^2\\
+        &= \frac{144}{169}\\\nonumber
     \end{align}
     \item Drawing one ace:
     \begin{align}
-        Pr(X=0) &= p \times q + q \times p\\
-        &= \frac{1}{13}\times\frac{12}{13} + \frac{12}{13}\times\frac{1}{13}\nonumber\\
-        &= \frac{24}{169} = 0.142824\\\nonumber
+        Pr(X=1) &= p \times q + q \times p\\
+        &= 2pq = \frac{24}{169}\\\nonumber
     \end{align}
     \item Drawing both aces:
     \begin{align}
-        Pr(X=0) &= p \times p\\
-        &= \frac{1}{13}\times\frac{1}{13} = \frac{1}{169}\\
-        &= 0.005833\\\nonumber
+        Pr(X=2) = p \times p &= p^2\\
+        &= \frac{1}{169}\\\nonumber
     \end{align}
 \end{enumerate}
 
 \begin{table}[H]
     \centering
-        \begin{tabular}{|c|c|}
+        \begin{tabular}{|c|r|}
             \hline
             \multirow{2}{*}{\normalsize{Random Variable [X]}} &   \multirow{2}{*}{\normalsize{Probability [Pr(X)}}    \\
                                         &                                                \\\hline
-            \multirow{2}{*}{\large{0}}  &   \multirow{2}{*}{\large{\(\frac{144}{169}\)}} \\
+            \multirow{2}{*}{\large{0}}  &   \multirow{2}{*}{\large{\(q^2 = \frac{144}{169}\)}} \\
                                         &                                                \\\hline
-            \multirow{2}{*}{\large{1}}  &   \multirow{2}{*}{\large{\(\frac{24}{169}\)}}  \\
+            \multirow{2}{*}{\large{1}}  &   \multirow{2}{*}{\large{\(2pq = \frac{24}{169}\)}}  \\
                                         &                                                \\\hline
-            \multirow{2}{*}{\large{2}}  &   \multirow{2}{*}{\large{\(\frac{1}{169}\)}}   \\
+            \multirow{2}{*}{\large{2}}  &   \multirow{2}{*}{\large{\(p^2 = \frac{1}{169}\)}}   \\
                                         &                                                \\\hline
     \end{tabular}
     \caption{Probability distribution values for the outcomes of the event.}
