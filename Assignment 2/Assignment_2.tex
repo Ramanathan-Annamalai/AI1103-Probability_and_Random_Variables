@@ -167,8 +167,47 @@ No. of ways of arranging the even numbers other than 2 in the remaining 9 places
 
 Number of favourable permutations 
 \begin{align}
-    = {}^{20}C_{10}\times10!\times9!
+    = {}^{20}C_{10}\times10!\times9!\\\nonumber
 \end{align}
+
+\begin{tikzpicture}[squarednode_odd/.style={rectangle, draw=red!60, minimum width=2.6mm, node distance = 0.1 pt},
+squarednode_even/.style={rectangle, draw=blue!60, minimum width=2.6mm, node distance = 0.1 pt},
+squarednode_2/.style={rectangle, draw=green!60,very thick, minimum width=2.6mm, node distance = 0.1 pt}]
+    \node[squarednode_odd]       (1)                                     {o};
+    \node[squarednode_odd]       (2)          [right=of 1]              {o};
+    \node[squarednode_odd]       (3)          [right=of 2]              {o};
+    \node[squarednode_2]         (4)         [right=of 3]              {2};
+    \node[squarednode_even]      (5)         [right=of 4]              {e};
+    \node[squarednode_odd]       (6)          [right=of 5]              {o};
+    \node[squarednode_even]      (7)         [right=of 6]              {e};
+    \node[squarednode_even]      (8)         [right=of 7]              {e};
+    \node[squarednode_odd]       (9)          [right=of 8]              {o};
+    \node[squarednode_odd]       (10)          [right=of 9]              {o};
+    \node[squarednode_even]      (11)         [right=of 10]              {e};
+    \node[squarednode_even]      (12)         [right=of 11]              {e};
+    \node[squarednode_odd]       (13)          [right=of 12]              {o};
+    \node[squarednode_even]      (14)         [right=of 13]              {e};
+    \node[squarednode_odd]       (15)          [right=of 14]              {o};
+    \node[squarednode_odd]       (16)          [right=of 15]              {o};
+    \node[squarednode_even]      (17)         [right=of 16]              {e};
+    \node[squarednode_even]      (18)         [right=of 17]              {e};
+    \node[squarednode_even]      (19)         [right=of 18]              {e};
+    \node[squarednode_odd]       (20)          [right=of 19]              {o};
+    
+    \node[rectangle ,draw=red!60, minimum width=2.6mm] (o) [below=of 3] {o};
+    \node[rectangle , node distance = 20pt, very thick] (legendodd) [right=of o] {choose random positions for odd numbers};
+    \node[rectangle ,draw=green!60,very thick, minimum width=2.6mm ,node distance = 10pt] (two) [below=of o] {2};
+    \node[rectangle , node distance = 20pt, very thick] (legendtwo) [right=of two] {place 2 in the first empty space};
+    \node[rectangle ,draw=blue!60, minimum width=2.6mm , node distance = 10pt] (e) [below=of two] {e};
+    \node[rectangle , node distance = 20pt, very thick] (legendeven) [right=of e] {place remaining even numbers};
+    \node[rectangle , draw red!0] (empty) [below=of e] {};
+    
+    \draw[->] (o.east) -- (legendodd.west);
+    \draw[->] (e.east) -- (legendeven.west);
+    \draw[->] (two.east) -- (legendtwo.west);
+\end{tikzpicture}
+
+
 Now, Probability of 2 appears at an earlier position than any other even number in the selected permutation = \(p\)\newline
 \begin{align}
     p &= \frac{\text{No. of favourable permutations}}{\text{Total no. of permutations}}\nonumber\\
