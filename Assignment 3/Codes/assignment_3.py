@@ -13,7 +13,7 @@ import random as rd
 mean_th = 50
 
 #simulation
-test_cases = 1000000
+test_cases = 10000000
 sum=0;
 
 for i in range(test_cases):
@@ -22,5 +22,5 @@ for i in range(test_cases):
 
 mean = sum/test_cases
 
-print("Expected mean temperature according to theory = 50.0")
+print("Expected mean temperature according to theory = {}".format(mean_th))
 print("Mean temperature obtained by simulation is {}".format(mean))
