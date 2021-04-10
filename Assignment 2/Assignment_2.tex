@@ -170,10 +170,11 @@ Number of favourable permutations
     = {}^{20}C_{10}\times10!\times9!\\\nonumber
 \end{align}
 
-\begin{tikzpicture}[squarednode_odd/.style={rectangle, draw=red!60, minimum width=2.6mm, node distance = 0.1 pt},
-squarednode_even/.style={rectangle, draw=blue!60, minimum width=2.6mm, node distance = 0.1 pt},
-squarednode_2/.style={rectangle, draw=green!60,very thick, minimum width=2.6mm, node distance = 0.1 pt}]
-    \node[squarednode_odd]       (1)                                     {o};
+\begin{tikzpicture}[squarednode_odd/.style={rectangle, draw=red!60, minimum width=2.6mm, node distance = 0.1 pt, inner sep = 2.9 },
+squarednode_even/.style={rectangle, draw=blue!60, minimum width=1.5mm, node distance = 0.1 pt, inner sep = 2.9 },
+squarednode_2/.style={rectangle, draw=green!60,very thick, minimum width=2.6mm, node distance = 0.1 pt, inner sep = 2.9}]
+    \node[rectangle, draw=red!0, minimum width=2.6mm, node distance = 0.1 pt, inner sep = 1 ]     (0)     {};
+    \node[squarednode_odd]       (1)         [right=of 0]                 {o};
     \node[squarednode_odd]       (2)          [right=of 1]              {o};
     \node[squarednode_odd]       (3)          [right=of 2]              {o};
     \node[squarednode_2]         (4)         [right=of 3]              {2};
@@ -194,12 +195,12 @@ squarednode_2/.style={rectangle, draw=green!60,very thick, minimum width=2.6mm, 
     \node[squarednode_even]      (19)         [right=of 18]              {e};
     \node[squarednode_odd]       (20)          [right=of 19]              {o};
     
-    \node[rectangle ,draw=red!60, minimum width=2.6mm] (o) [below=of 3] {o};
-    \node[rectangle , node distance = 20pt, very thick] (legendodd) [right=of o] {choose random positions for odd numbers};
-    \node[rectangle ,draw=green!60,very thick, minimum width=2.6mm ,node distance = 10pt] (two) [below=of o] {2};
-    \node[rectangle , node distance = 20pt, very thick] (legendtwo) [right=of two] {place 2 in the first empty space};
-    \node[rectangle ,draw=blue!60, minimum width=2.6mm , node distance = 10pt] (e) [below=of two] {e};
-    \node[rectangle , node distance = 20pt, very thick] (legendeven) [right=of e] {place remaining even numbers};
+    \node[rectangle ,draw=red!60, minimum width=2.6mm, inner sep = 3 , outer sep = 1] (o) [below=of 3] {o};
+    \node[rectangle , node distance = 20pt, inner sep = 3 , outer sep = 1] (legendodd) [right=of o] {choose positions for odd numbers};
+    \node[rectangle ,draw=green!60,very thick, minimum width=2.6mm ,node distance = 10pt, inner sep = 3 , outer sep = 1] (two) [below=of o] {2};
+    \node[rectangle , node distance = 20pt, inner sep = 3 , outer sep = 1] (legendtwo) [right=of two] {place 2 in the first empty space};
+    \node[rectangle ,draw=blue!60, minimum width=2.6mm , node distance = 10pt, inner sep = 3 , outer sep = 1] (e) [below=of two] {e};
+    \node[rectangle , node distance = 20pt, inner sep = 3 , outer sep = 1] (legendeven) [right=of e] {place remaining even numbers};
     \node[rectangle , draw red!0] (empty) [below=of e] {};
     
     \draw[->] (o.east) -- (legendodd.west);
