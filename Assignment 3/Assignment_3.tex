@@ -149,24 +149,26 @@ The mean of \(X\) is ?\newline
 
 \section*{\large{Solution}}
 \begin{flushleft}
-Given \(X\) is a continuous random variable in range [0,100].\newline
+Given, \(X\) is a continuous random variable in range [0,100].\newline
 
-The probability distribution function function is \(f(x)\)
+The probability density function is \(Pr(X=x)\)
 \end{flushleft}
 \begin{align}
-    f(x) = 0.01 \;\forall\; X \in [0,100]\\\nonumber
+    Pr(X=x) &= f(x) \;\;\forall\; x \in [0,100]\\
+    &= 0.01 \;\;\forall\; x \in [0,100]\\\nonumber
 \end{align}
 
 \begin{flushleft}
-Mean of the probability distribution function is \(\mu\).
+Mean of the random variable X is \(E(X)\)
 \end{flushleft}
 
 \begin{align}
-    \mu &= \int X\,f(x)\,\mathrm{d}x\\\nonumber\\
-    &=\displaystyle\int\limits_{0}^{100} X\,(0.01)\,\mathrm{d}x\\\nonumber\\
-    &=(0.01)\displaystyle\int\limits_{0}^{100} X\,\mathrm{d}x\\\nonumber\\
-    &=(0.01)\;\frac{X^2}{2}\bigg\vert_0^{100}\\\nonumber\\
-    &=50.0\\\nonumber
+    E(X) &= \int x\,Pr(X=x)\,\mathrm{d}x\\\nonumber\\
+    &= \int x\,f(x)\,\mathrm{d}x\\\nonumber\\
+    &=\displaystyle\int\limits_{0}^{100} x\,(0.01)\,\mathrm{d}x\\\nonumber\\
+    &=(0.01)\displaystyle\int\limits_{0}^{100} x\,\mathrm{d}x\\\nonumber\\
+    &=(0.01)\;\;\frac{x^2}{2}\bigg\vert_0^{100}\\\nonumber\\
+    &=50.0 \text{  degree Celsius}\\\nonumber
 \end{align}
 
 \begin{flushright}
